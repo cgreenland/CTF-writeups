@@ -8,7 +8,7 @@
 
 This challenge caught my eye because I realized the name hinted at linear regression, a modeling technique and ML algorithm I learned about while taking a Python for data science class. Connecting to the challenge, I saw that it took 30 numbers as input, one-by-one, and produced a single number. Trying something naive, like all 1s produced 2809.
 
-![linear.png](../images/linear.png) 
+![linear.png](./images/linear.png) 
 
 While I didn't remember every detail, I recalled learning that a linear regression model was basically a weighted sum of variables something like $a_1x_1 + a_2x_2 + ... + a_nx_n$. If that's all this program is doing, one can then "steal" the model by finding the weights, and these weights probably correspond to the flag. Since this equation is linear, I should be able to solve for each weight iteratively by setting its associated variable to 1 and all others to 0. The result should then be weight itself (see note at end).
 
@@ -45,7 +45,7 @@ print("\n",flag, "\n")
 
 After 30 iterations of the outer loop, the script has all 30 weights. It then converts the weights to an ASCII string by calculating and subtracting the offset from the suspected first character of the flag. As suspected the model weights yield the flag.
 
-![linear_flag.png](../images/linear_flag.png) 
+![linear_flag.png](./images/linear_flag.png) 
 
 ### Note
 

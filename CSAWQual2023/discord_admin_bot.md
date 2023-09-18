@@ -168,7 +168,7 @@ I couldn't see any way to bypass or overwrite the role check, and it seemed obvi
 
 It worked! The bot was in my server!
 
-![](../images/discord_join.png)
+![](./images/discord_join.png)
 
 Based on the helpful message, I surmised that `ADMIN_ROLE` was simply `admin` and gave myself this role. Now I had access to the commands.
 
